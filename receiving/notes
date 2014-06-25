@@ -1,1 +1,0 @@
-gcc gpiopwm.c -o gpiopwm -lpigpio -lrt -lpthread
