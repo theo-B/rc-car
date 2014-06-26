@@ -4,17 +4,6 @@
 // js-read ver 3.0
 // Read from joystick, optimised for sending over the serial port
 
-// Structure for pin values
-struct pinvals {
-        int pin;     // Which GPIO to use (obsolete)
-        int range;   // PWM range of pin
-        int freq;    // PWM frequency
-        int neutral; // Neutral position
-        int pwm;     // Current pwm setting
-        int change;  // Value to change pwm by
-};
-typedef struct pinvals Pinval;
-
 int main() {
     Pinval mpin, spin;
     // Set up the motor pin
