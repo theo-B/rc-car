@@ -9,6 +9,17 @@
 
 // Optimized for serial usage
 
+// Structure for pin values
+struct pinvals {
+        int pin;     // Which GPIO to use (obsolete)
+        int range;   // PWM range of pin
+        int freq;    // PWM frequency
+        int neutral; // Neutral position
+        int pwm;     // Current pwm setting
+        int change;  // Value to change pwm by
+};
+typedef struct pinvals Pinval;
+
 // Function that opens the joystick
 int open_joystick(char *device_name) {
     int fd = -1;
