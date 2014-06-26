@@ -1,10 +1,11 @@
 #include <stdio.h>
 #include <pigpio.h>
 
-// pwm.h ver 2.0
-// Optimised for use with serial-receive.py
+// pwm.h ver 2.1
+// Optimised for use with serial-receive-to-pwm.py
 // Using received data from the serial port
 
+// Create structure of pin variables
 struct pinvals {
 	int pin;
 	int range;
