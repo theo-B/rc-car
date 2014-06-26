@@ -2,11 +2,12 @@
 #include <pigpio.h>
 #include "pwm-receive.h"
 
-// gpiopwm ver 1.0
-// For use with serial-receive.py
-// Sets GPIO pulses received from serial port
+// gpiopwm ver 2.0
+// For use with serial-receive-to-pwm.py
+// Sets GPIO PWM pulses received from serial port
 
 int main() {
+    // Create structures for GPIO pins
     Pinval mpin, spin;
     // Set up the motor pin
     mpin.pin = 4;
@@ -28,12 +29,13 @@ int main() {
 
     printf("Ready to run\n");
 
-    char* fd = fgets(input,sizeof(input),stdin);
+    char* fd = fgets(input,sizeof(input),stdin); // Read from stdin
     while (fd != NULL) {
         // Remove index char from start of input
         printf("Received %s\n",input);
         char first = input[0];
         numbers = input+1;
+        // Process input
         if (first=='m') {
             mpin.pwm = atoi(numbers);
             printf("Motor set to %s\n",numbers);
