@@ -5,14 +5,14 @@
 // Optimised for use with serial-receive-to-pwm.py
 // Using received data from the serial port
 
-// Create structure of pin variables
+// Structure for pin values
 struct pinvals {
-	int pin;
-	int range;
-	int freq;
-	int neutral;
-	int pwm;
-	int change; // Value to change pwm by
+        int pin;     // Which GPIO to use
+        int range;   // PWM range of pin
+        int freq;    // PWM frequency
+        int neutral; // Neutral position
+        int pwm;     // Current pwm setting
+        int change;  // Value to change pwm by
 };
 typedef struct pinvals Pinval;
 
