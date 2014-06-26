@@ -1,1 +1,4 @@
+# Compilation flags for compiling with pigpio
+# use to compile gpiopwm.c
+
 gcc gpiopwm.c -o gpiopwm -lpigpio -lrt -lpthread
