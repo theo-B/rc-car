@@ -6,14 +6,12 @@
 
 int main() {
     Pinval mpin, spin;
-    // Set up the motor pin
-    mpin.pin = 4;
+    // Set up the motor variables
     mpin.range = 2000;
     mpin.freq = 500;
     mpin.neutral = 1500;
 
-    // Set up the servo pin
-    spin.pin = 17;
+    // Set up the servo variables
     spin.range = 2000;
     spin.freq = 50;
     spin.neutral = 1500;
@@ -31,7 +29,7 @@ int main() {
                  // Motor Control
                  if (jse.number == 1) {
                      mpin.change = jse.value / -65.534;
-                     mpin.pwm = 1500 + mpin.change;
+                     mpin.pwm = mpin.neutral + mpin.change;
                      printf("m%d\n",mpin.pwm);
                      fflush(stdout);
                  }
